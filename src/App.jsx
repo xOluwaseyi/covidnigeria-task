@@ -1,19 +1,12 @@
-import "./App.css";
-import { useSelector, useDispatch } from "react-redux";
-import { countryActions } from "./store";
+import React from "react";
+import Countries from "./component/Countries";
 
-function App() {
-  const dispatch = useDispatch();
-  const toShow = useSelector((state) => state.country.toShow);
-
+const App = () => {
   return (
-    <div className="App">
-      {!toShow && <h1>Vite + React</h1>}
-      <div className="card">
-        <button onClick={() => dispatch(countryActions.toggle())}>count</button>
-      </div>
+    <div>
+      <Countries />
     </div>
   );
-}
+};
 
 export default App;

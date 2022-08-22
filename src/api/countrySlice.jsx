@@ -3,15 +3,13 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const countrySlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://covidnigeria.herokuapp.com/api",
+    baseUrl: "https://covidnigeria.herokuapp.com",
   }),
   endpoints: (builder) => ({
     getCountries: builder.query({
-      query: () => "/todos",
-      transformResponse: (res) => res.sort((a, b) => b.id - a.id),
-      providesTags: ["Todos"],
+      query: () => "/api",
     }),
   }),
 });
 
-export const { useGetCountries } = countrySlice;
+export const { useGetCountriesQuery } = countrySlice;

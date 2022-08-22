@@ -1,14 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
 import "./index.css";
-import { Provider } from "react-redux";
-import store from "./store";
+import App from "./App";
+
+import { ApiProvider } from "@reduxjs/toolkit/query/react";
+import { countrySlice } from "./api/countrySlice";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Provider store={store}>
-    <React.StrictMode>
+  <React.StrictMode>
+    <ApiProvider api={countrySlice}>
       <App />
-    </React.StrictMode>
-  </Provider>
+    </ApiProvider>
+  </React.StrictMode>
 );
